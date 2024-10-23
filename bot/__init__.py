@@ -227,7 +227,7 @@ CMD_SUFFIX = environ.get('CMD_SUFFIX', '')
 DATABASE_URL = environ.get('DATABASE_URL', 'mongodb+srv://hello:hello@cluster0.vc2htx0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 AUTO_THUMBNAIL = environ.get('AUTO_THUMBNAIL', 'True').lower() == 'true'
 PREMIUM_MODE = environ.get('PREMIUM_MODE', 'True').lower() == 'true'
-SESSION_TIMEOUT = int(environ.get('SESSION_TIMEOUT', 21600))
+SESSION_TIMEOUT = int(environ.get('SESSION_TIMEOUT', 0))
 DAILY_MODE = environ.get('DAILY_MODE', 'False').lower() == 'true'
 MEDIA_GROUP = environ.get('MEDIA_GROUP', 'False').lower() == 'true'
 STOP_DUPLICATE = environ.get('STOP_DUPLICATE', 'True').lower() == 'true'
