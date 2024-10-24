@@ -223,8 +223,8 @@ class TgUploader:
             if self._is_cancelled:
                 return
             await self._final_message(ss_image, bool(is_video or is_audio))
-            if self._send_pm:
-                await self._copy_Leech(self._listener.user_id, self._send_msg)
+            
+            await self._copy_Leech(self._listener.user_id, self._send_msg)
             if self._listener.upDest:
                 await self._copy_Leech(self._listener.upDest, self._send_msg)
 
@@ -360,8 +360,8 @@ class TgUploader:
     async def _send_media_group(self, msgs: list[Message], subkey: str, key: str):
         msgs_list = await msgs[0].reply_to_message.reply_media_group(media=self._get_input_media(subkey, key),
                                                                      quote=True, disable_notification=True)
-        if self._send_pm:
-            await self._copy_media_group(self._listener.user_id, msgs_list)
+    #    if self._send_pm:
+        await self._copy_media_group(self._listener.user_id, msgs_list)
         if self._listener.upDest:
             await self._copy_media_group(self._listener.upDest, msgs_list)
         for msg in msgs:
@@ -390,8 +390,8 @@ class TgUploader:
                     outputs.remove(m)
         if outputs:
             msgs_list = await self._send_msg.reply_media_group(media=inputs, quote=True, disable_notification=True)
-            if self._send_pm:
-                await self._copy_media_group(self._listener.user_id, msgs_list)
+        #    if self._send_pm:
+            await self._copy_media_group(self._listener.user_id, msgs_list)
             if self._listener.upDest:
                 await self._copy_media_group(self._listener.upDest, msgs_list)
             self._send_msg = msgs_list[-1]
