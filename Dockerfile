@@ -1,4 +1,4 @@
-FROM admin44449999/area:latest
+FROM python:3.9
 
 WORKDIR /usr/src/app
 RUN chmod 777 /usr/src/app
