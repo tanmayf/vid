@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM maheshkadali/anime-leech:latest
 
 WORKDIR /usr/src/app
 RUN chmod 777 /usr/src/app
