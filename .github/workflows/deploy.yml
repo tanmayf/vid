@@ -37,8 +37,6 @@ jobs:
     steps:
       - name: Checkout deploy branch
         uses: actions/checkout@v2
-         with:
-        fetch-depth: 0  
 
       - name: Delete unnecessary directories and files
         run: |
